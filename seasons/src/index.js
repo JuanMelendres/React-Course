@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
     // constructor(props) {
@@ -30,29 +31,20 @@ class App extends React.Component {
             );
         } 
         if (!this.state.errorMessage && this.state.lat) {
-            return (
-                <div className="ui">
-                    <SeasonDisplay lat={this.state.lat} />
-                </div>
-            );
+            return <SeasonDisplay lat={this.state.lat} />;
         }
-        return (
-            <div className="ui">
-                <div className="ui active dimmer">
-                    <div className="ui text loader">Loading</div>
-                </div>
-            </div>
-        );
+        return <Spinner/>;
     }
-    // <div className="ui">
-    //      <h1>Loading !!!</h1>
-    // </div>
 }
 
 ReactDOM.render(
     <App />,
     document.querySelector('#root')
 );
+
+    // <div className="ui">
+    //      <h1>Loading !!!</h1>
+    // </div>
 
     // Good place to do data-loading!!
     // componentDidMount() {
