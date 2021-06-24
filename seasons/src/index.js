@@ -38,10 +38,15 @@ class App extends React.Component {
         }
         return (
             <div className="ui">
-                <h1>Loading !!!</h1>
+                <div className="ui active dimmer">
+                    <div className="ui text loader">Loading</div>
+                </div>
             </div>
         );
     }
+    // <div className="ui">
+    //      <h1>Loading !!!</h1>
+    // </div>
 }
 
 ReactDOM.render(
