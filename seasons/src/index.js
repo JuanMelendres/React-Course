@@ -21,8 +21,7 @@ class App extends React.Component {
         );
     }
 
-    // React says we have to define render!!
-    render() {
+    renderContent() {
         if (this.state.errorMessage && !this.state.lat) {
             return (
                 <div className="ui">
@@ -33,7 +32,16 @@ class App extends React.Component {
         if (!this.state.errorMessage && this.state.lat) {
             return <SeasonDisplay lat={this.state.lat} />;
         }
-        return <Spinner/>;
+        return <Spinner message="Please accept location request :)" />;
+    }
+
+    // React says we have to define render!!
+    render() {
+        return (
+            <div className="border-red">
+                {this.renderContent()}
+            </div>
+        );
     }
 }
 
