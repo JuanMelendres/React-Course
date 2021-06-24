@@ -27,10 +27,12 @@ const SeasonDisplay = props => {
     // const icon = season === 'Winter' ? 'snowflake icon' : 'sun icon';
     const { text, iconName } = seasonConfig[season];
     return (
-        <div className={`season-display ${season}`}>
-            <i className={`icon-left massive ${iconName} icon`}></i>
-            <h1>{ text }</h1>
-            <i className={`icon-right massive ${iconName} icon`}></i>
+        <div className="ui">
+            <div className={`season-display ${season}`}>
+                <i className={`icon-left massive ${iconName} icon`}></i>
+                <h1>{ text }</h1>
+                <i className={`icon-right massive ${iconName} icon`}></i>
+            </div>
         </div>
     );
 }
